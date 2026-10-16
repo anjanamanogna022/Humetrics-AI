@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f8fafc;              /* light background */
+    color: #0f172a;                   /* dark text */
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #475569;   /* darker grey for visibility */
+    margin-bottom: 40px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background: #ffffff;                      /* white card */
+    border: 1px solid #e2e8f0;                /* light border */
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #64748b;   /* muted heading */
+}
+
+.value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+/* Stress colors */
+.stress-low {
+    color: #16a34a;
+}
+
+.stress-mid {
+    color: #ca8a04;
+}
+
+.stress-high {
+    color: #dc2626;
+}
+
+/* Alert */
+.alert {
+    margin-top: 35px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #fee2e2;
+    color: #991b1b;
+    font-size: 1.1rem;
+}
+
+/* Video */
+.video {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+/* AI Advice */
+#ai-advice {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    word-break: break-word;
+    text-align: center;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #ffffff;
+    padding: 20px;
+    height: 100vh;
+    border-right: 1px solid #e2e8f0;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.sidebar button:hover {
+    background: #e2e8f0;
+}
+
+/* Active sidebar */
+.sidebar button.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Tasks */
+.task-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cbd5f5;
+}
+
+#task-list li {
+    background: #f1f5f9;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Back Button */
+.back-btn {
+    background: #e2e8f0;
+    color: #0f172a;
+    border: 1px solid #cbd5f5;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #cbd5f5;
+    transform: translateX(-4px);
+}
+
+/* Utility */
+.hidden {
+    display: none;
+}
+/* ================= DARK MODE ================= */
+
+body.dark-mode {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e5e7eb;
+}
+
+body.dark-mode .subtitle {
+    color: #94a3b8;
+}
+
+/* Cards */
+body.dark-mode .card {
+    background: #020617;
+    border: 1px solid #1e293b;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .card h2 {
+    color: #94a3b8;
+}
+
+body.dark-mode .value {
+    color: #e5e7eb;
+}
+
+/* Sidebar */
+body.dark-mode .sidebar {
+    background: #020617;
+    border-right: 1px solid #1f2937;
+}
+
+body.dark-mode .sidebar h2 {
+    color: #e5e7eb;
+}
+
+body.dark-mode .sidebar button {
+    background: #0f172a;
+    color: #e5e7eb;
+    border: none;
+}
+
+body.dark-mode .sidebar button:hover {
+    background: #1e293b;
+}
+
+/* Tasks */
+body.dark-mode #task-list li {
+    background: #1e293b;
+}
+
+/* Input */
+body.dark-mode #task-input {
+    background: #0f172a;
+    color: #e5e7eb;
+    border: 1px solid #334155;
+}
+
+/* Alert */
+body.dark-mode .alert {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fecaca;
+}
+
+/* Video */
+body.dark-mode .video {
+    border: 2px solid rgba(255,255,255,0.15);
+}
+
+/* Back Button */
+body.dark-mode .back-btn {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #e5e7eb;
+    border: 1px solid #334155;
+}
+
+body.dark-mode .back-btn:hover {
+    background: linear-gradient(135deg, #334155, #1e293b);
+}

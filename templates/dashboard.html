@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Stress Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+<button id="theme-toggle">🌙 Dark Mode</button>
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('tasks')">Planner & Tasks</button>
+        <a href="/details"><button>Details</button></a>
+        <button onclick="endSession()">End Session</button>
+        
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- DASHBOARD SECTION -->
+        <div id="dashboard-section">
+
+            <div class="container">
+                <h1>AI Stress Monitoring Dashboard</h1>
+                <p class="subtitle"></p>
+
+                <div class="grid">
+                    <div class="card">
+    <h2>Eye Blinks</h2>
+    <div id="blinks" class="value">--</div>
+</div>
+                    <div class="card">
+                        <h2>Posture</h2>
+                        <div id="posture" class="value">--</div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Screen Time</h2>
+                        <div id="screen" class="value">--</div>
+                    </div>
+
+                    <div class="card">
+                        <h2>AI Recommendation</h2>
+                        <div id="ai-advice" class="value">Loading...</div>
+                    </div>
+
+                    <div class="card stress">
+                        <h2>Stress Level</h2>
+                        <div id="stress" class="value">--</div>
+                    </div>
+
+                   
+
+                    <div class="card">
+                        <h2>Mouse Clicks</h2>
+                        <div id="mouse" class="value">--</div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Keystrokes</h2>
+                        <div id="keyboard" class="value">--</div>
+                    </div>
+
+                </div>
+
+                <div id="alert" class="alert hidden">
+                    ⚠ High stress detected. Take a short break.
+                </div>
+
+                <div class="video-card">
+                    <h2>Live Camera</h2>
+                    <img src="{{ url_for('video_feed') }}" class="video">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TASKS SECTION -->
+        <div id="tasks-section" class="hidden">
+            <div class="container">
+                <h1>Planner & Tasks</h1>
+
+                <div class="task-box">
+                    <input type="text" id="task-input" placeholder="Enter task...">
+                    <button onclick="addTask()">Add</button>
+                </div>
+
+                <ul id="task-list"></ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+<script>
+const btn = document.getElementById("theme-toggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    btn.textContent = "☀️ Light Mode";
+}
+
+btn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        btn.textContent = "☀️ Light Mode";
+    } else {
+        localStorage.setItem("theme", "light");
+        btn.textContent = "🌙 Dark Mode";
+    }
+});
+</script>
+<script>
+function endSession() {
+    window.location.href = "/end_session";
+}
+</script>
+
+</body>
+</html>

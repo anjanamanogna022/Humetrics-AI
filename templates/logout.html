@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session Ended</title>
+    <style>
+        body {
+            background: #020617;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .box {
+            background: #111827;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        h1 {
+            color: #22c55e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>✅ Report Sent Successfully</h1>
+    <p>You are logged out.</p>
+    <p>Redirecting to login...</p>
+</div>
+
+<script>
+    setTimeout(() => {
+        window.location.href = "/";
+    }, 3000); // 3 seconds
+</script>
+
+</body>
+</html>
