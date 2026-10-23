@@ -155,7 +155,7 @@ The primary objective of Humetrics AI is to explore how **multimodal AI, compute
 
 ## Authors
 
-**Priscilla Benedict**
+**Anjana Mangona P**
 
 B.Tech – Computer Science & Engineering (Artificial Intelligence & Machine Learning)
 
